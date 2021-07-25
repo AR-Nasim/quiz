@@ -98,6 +98,9 @@ label{
 .button:hover {
     background-color: #242658;
 }
+.button:focus{
+    outline: none !important;
+}
 #start:hover{
     background-color: #30336b;
 }
