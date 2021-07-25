@@ -39,7 +39,6 @@ function questionGenerator(data) {
         questions.textContent = element.question;
         const correctOption = Math.round(Math.random() * 3) + 1;
         answer.push(correctOption);
-        console.log(element.correct_answer + " " + correctOption);
         let j = 0;
         for (let k = 0; k < 4; k++) {
             if (k == correctOption - 1) {
@@ -55,7 +54,6 @@ function questionGenerator(data) {
 }
 
 function resultGenerator() {
-    console.log(answer[0])
     if (optA.checked) {
         if (answer[0] == 1) {
             marks++;
