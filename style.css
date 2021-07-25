@@ -95,8 +95,11 @@ label{
     border: none;
     border-radius: 0 0 10px 10px;
 }
-#button:hover{
+.button:hover {
     background-color: #242658;
+}
+#start:hover{
+    background-color: #30336b;
 }
 
 @media only screen and (max-width: 600px){
