@@ -18,33 +18,37 @@
 
 <body>
 
-    <main>
+    <header id="begin">
+        <input type="submit" class="button" id="start" value="Start">
+    </header>
+
+    <main id="main">
         <div class="question-box">
-            <h4 id="question">Question No.</h4>
-             <h4>"While Apple was formed in California, in which western state was Microsoft founded?"</h4>
+            <h4 id="question-no">Question No.</h4>
+             <h4 id="question">"While Apple was formed in California, in which western state was Microsoft founded?"</h4>
         </div>
         <div class="options">
-            <label for="0">Dhaka</label>
-            <input class="form-check-input bg-dark" type="radio" id="0" name="quiz"><br>
+            <label for="0" name="quiz-label">Dhaka</label>
+            <input class="form-check-input bg-dark" name="quiz" type="radio" id="0" ><br>
         </div>
         <div class="options">
-            <label for="1">Sylhet</label>
+            <label for="1" name="quiz-label">Sylhet</label>
             <input class="form-check-input bg-dark" type="radio" id="1" name="quiz"><br>
         </div>
         <div class="options">
-            <label for="2">Khulna</label>
+            <label for="2" name="quiz-label">Khulna</label>
             <input class="form-check-input bg-dark" type="radio" id="2" name="quiz"><br>
         </div>
         <div class="options">
-            <label for="3">Noakhali</label>
+            <label for="3" name="quiz-label">Noakhali</label>
             <input class="form-check-input bg-dark" type="radio" id="3" name="quiz"><br>
         </div>
-        <input id="button" type="submit" Value="Next">
+        <input class="button" type="submit" Value="Next">
     </main>
 
-    <section>
-        <h3>Congratulations!! <br> You've done a great job</h3>
-        <h4><i class="fas fa-award"></i> Your Score: </h4>
+    <section id="result">
+        <h3 id="feedback">Congratulations!! <br> You've done a great job</h3>
+        <h4><i class="fas fa-award"></i> <span id="final-result">Your Score:</span> </h4>
     </section>
 
     <script src="script.js"></script>

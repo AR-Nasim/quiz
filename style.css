@@ -10,8 +10,26 @@ body{
     height: 100vh;
     background-color: #dff9fb;
 }
-main{
+header{
     display: block;
+    
+}
+#start{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: block;
+    color: white;
+    border: none;
+    width: 200px;
+    height: 80px;
+    background-color: #130f40;
+    border-radius: 5px;
+    font-size: 30px;
+}
+main{
+    display: none;
     color: white;
     position: absolute;
     top: 50%;
@@ -42,7 +60,7 @@ section{
 h4,h3{
     margin: 5% 5% 6% 5%;
 }
-#question{
+#question-no{
     color: #9aa3a7;
 }
 .options{
@@ -67,7 +85,7 @@ label{
     width: 85%;
     cursor: pointer;
 }
-#button{
+.button{
     color: white;
     position: absolute;
     bottom: 0;
@@ -79,4 +97,13 @@ label{
 }
 #button:hover{
     background-color: #242658;
+}
+
+@media only screen and (max-width: 600px){
+    html{
+        font-size: 0.9rem;
+    }
+    main{
+        width: 300px;
+    }
 }
