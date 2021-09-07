@@ -32,6 +32,7 @@ function questionGenerator(data) {
             feedback.innerText = "Congratulations!!\r\nYou've done a great job.";
         }
         finalResult.innerText = "Your Score: " + marks + "/10";
+        storeScore(marks);
     }
     else {
         const element = data.results[i];
