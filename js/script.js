@@ -4,6 +4,7 @@ const button = document.getElementsByClassName("button");
 const main = document.getElementById("main");
 const begin = document.getElementById("begin");
 const result = document.getElementById("result");
+const scoreBoard = document.getElementById("scores");
 const questionNo = document.getElementById("question-no");
 const finalResult = document.getElementById("final-result");
 const feedback = document.getElementById("feedback");
@@ -16,7 +17,8 @@ let marks = 0;
 let i = 0;
 let skips = 3;
 function questionGenerator(data) {
-    if (i == 10) {
+    if (i == 1) {
+        scoreBoard.style.display = "none";
         main.style.display = "none";
         result.style.display = "block";
         if(!marks){
@@ -92,6 +94,26 @@ function resultGenerator() {
         stopPropagation();
     }
     answer.shift();
+}
+
+const scores = () =>{
+    result.style.display = "none";
+    scoreBoard.style.display = "block";
+    const totalScoresObj = getScore();
+    const totalScores = totalScoresObj.score;
+
+    const scoreList = document.getElementById('score-list');
+    for (let i = 0; i < totalScores.length; i++) {
+        const element = totalScores[i];
+        const li = document.createElement('li');
+        li.innerHTML = `${i+1}. ${element}`;
+        scoreList.appendChild(li);
+        
+    }
+}
+
+const reload = () =>{
+    location. reload();
 }
 
 fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple').

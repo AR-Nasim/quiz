@@ -40,18 +40,28 @@ main{
     background-color: #130f40;
     border-radius: 10px;
 }
-section{
+#result,#scores{
     display: none;
-    color: white;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+.score{
+    color: white;
     width: 430px;
-    height: 180px;
+    padding: 20px 0;
     background-color: #130f40;
     border-radius: 10px;
     text-align: center;
+}
+#score-list {
+    margin-top: 20px;
+}
+#score-list li{
+    font-size: 24px;
+    list-style: none;
+    margin: 3px;
 }
 .question-box{
     width: 100%;
@@ -84,6 +94,17 @@ label{
     font-size: .8rem;
     width: 85%;
     cursor: pointer;
+}
+.btn{
+    color: white;
+    background-color: #130f40;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+}
+.btn:hover{
+    color: white;
+    background-color: #30336b;
 }
 .button{
     color: white;

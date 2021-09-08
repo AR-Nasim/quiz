@@ -14,10 +14,7 @@ const storeScore = marks => {
     console.log(quizScore);
     if (quizScore['score']) {
         const scoreArray = quizScore['score'];
-        scoreArray.sort(function compare(num1, num2) {
-            return num1 - num2;
-        });
-        scoreArray.reverse();
+        
         if (scoreArray.length < 5) {
             for (let i = 0; i < scoreArray.length; i++) {
                 const element = scoreArray[i];
