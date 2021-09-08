@@ -16,21 +16,26 @@ let answer = [];
 let marks = 0;
 let i = 0;
 let skips = 3;
+
+const showResults = () => {
+    scoreBoard.style.display = "none";
+    main.style.display = "none";
+    result.style.display = "block";
+}
+
 function questionGenerator(data) {
     if (i == 10) {
-        scoreBoard.style.display = "none";
-        main.style.display = "none";
-        result.style.display = "block";
-        if(!marks){
+        showResults();
+        if (!marks) {
             feedback.innerText = "Alas!\r\nEven your luck didn't help you!";
         }
-        else if(marks >=1 && marks<=4){
+        else if (marks >= 1 && marks <= 4) {
             feedback.innerText = "Ohh Dear!\r\nBetter luck next time.";
         }
-        else if(marks >=5 && marks<=8){
+        else if (marks >= 5 && marks <= 8) {
             feedback.innerText = "Good Job!\r\nYou've done well.";
         }
-        else{
+        else {
             feedback.innerText = "Congratulations!!\r\nYou've done a great job.";
         }
         finalResult.innerText = "Your Score: " + marks + "/10";
@@ -82,7 +87,7 @@ function resultGenerator() {
         optD.checked = false;
     }
     else if (skips) {
-        var r = confirm("Do you really wanna skip this question? You've "+skips+" questions to skip!");
+        var r = confirm("Do you really wanna skip this question? You've " + skips + " questions to skip!");
         if (r == true) {
             skips--;
         } else {
@@ -96,24 +101,25 @@ function resultGenerator() {
     answer.shift();
 }
 
-const scores = () =>{
+const scores = () => {
     result.style.display = "none";
     scoreBoard.style.display = "block";
     const totalScoresObj = getScore();
     const totalScores = totalScoresObj.score;
 
     const scoreList = document.getElementById('score-list');
+    scoreList.textContent = '';
     for (let i = 0; i < totalScores.length; i++) {
         const element = totalScores[i];
         const li = document.createElement('li');
-        li.innerHTML = `${i+1}. ${element}`;
+        li.innerHTML = `${i + 1}. ${element}`;
         scoreList.appendChild(li);
-        
+
     }
 }
 
-const reload = () =>{
-    location. reload();
+const reload = () => {
+    location.reload();
 }
 
 fetch('https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple').
