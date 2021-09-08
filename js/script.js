@@ -17,7 +17,7 @@ let marks = 0;
 let i = 0;
 let skips = 3;
 function questionGenerator(data) {
-    if (i == 1) {
+    if (i == 10) {
         scoreBoard.style.display = "none";
         main.style.display = "none";
         result.style.display = "block";
