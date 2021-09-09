@@ -19,7 +19,7 @@ let i = 0;
 let skips = 3;
 
 const setCurrentName = () =>{
-    
+    input.value = getCurrentName();
 }
 
 const showResults = () => {
@@ -29,7 +29,7 @@ const showResults = () => {
 }
 
 function questionGenerator(data) {
-    if (i == 1) {
+    if (i == 10) {
         showResults();
         if (!marks) {
             feedback.innerText = "Alas!\r\nEven your luck didn't help you!";

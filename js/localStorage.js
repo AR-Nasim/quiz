@@ -1,4 +1,15 @@
 
+const getCurrentName = () =>{
+    let currentName = localStorage.getItem('currentName');
+    currentName = JSON.parse(currentName);
+    if(!currentName){
+        return 'Unknown';
+    }
+    return currentName.currentName;
+}
+
+setCurrentName();
+
 const getName = () =>{
     let previousNames = localStorage.getItem('name');
     previousNames = JSON.parse(previousNames);
@@ -18,6 +29,8 @@ const getScore = () => {
 }
 
 const storeScore = (marks, name) => {
+    let currentName = {currentName: name};
+    currentName = JSON.stringify(currentName);
     let participantName = getName();
     let quizScore = getScore();
     if (quizScore['score']) {
@@ -57,8 +70,10 @@ const storeScore = (marks, name) => {
         quizScore['score'] = [marks];
         participantName['name'] = [name];
     }
+
     quizScore = JSON.stringify(quizScore);
     participantName = JSON.stringify(participantName);
     localStorage.setItem('score', quizScore);
     localStorage.setItem('name', participantName);
+    localStorage.setItem('currentName', currentName);
 }
