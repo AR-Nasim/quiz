@@ -1,5 +1,6 @@
 const questions = document.getElementById("question");
 const options = document.getElementsByName("quiz-label");
+const input = document.getElementById("input");
 const button = document.getElementsByClassName("button");
 const main = document.getElementById("main");
 const begin = document.getElementById("begin");
@@ -17,6 +18,10 @@ let marks = 0;
 let i = 0;
 let skips = 3;
 
+const setCurrentName = () =>{
+    
+}
+
 const showResults = () => {
     scoreBoard.style.display = "none";
     main.style.display = "none";
@@ -24,7 +29,7 @@ const showResults = () => {
 }
 
 function questionGenerator(data) {
-    if (i == 10) {
+    if (i == 1) {
         showResults();
         if (!marks) {
             feedback.innerText = "Alas!\r\nEven your luck didn't help you!";
@@ -39,7 +44,7 @@ function questionGenerator(data) {
             feedback.innerText = "Congratulations!!\r\nYou've done a great job.";
         }
         finalResult.innerText = "Your Score: " + marks + "/10";
-        storeScore(marks);
+        storeScore(marks, input.value);
     }
     else {
         const element = data.results[i];
@@ -106,13 +111,16 @@ const scores = () => {
     scoreBoard.style.display = "block";
     const totalScoresObj = getScore();
     const totalScores = totalScoresObj.score;
+    const participantNameObj = getName();
+    const participantNames = participantNameObj.name;
 
     const scoreList = document.getElementById('score-list');
     scoreList.textContent = '';
     for (let i = 0; i < totalScores.length; i++) {
-        const element = totalScores[i];
+        const score = totalScores[i];
+        const name = participantNames[i];
         const li = document.createElement('li');
-        li.innerHTML = `${i + 1}. ${element}`;
+        li.innerHTML = `${i + 1}. ${name} ${score}`;
         scoreList.appendChild(li);
 
     }

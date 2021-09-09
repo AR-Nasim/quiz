@@ -1,4 +1,12 @@
 
+const getName = () =>{
+    let previousNames = localStorage.getItem('name');
+    previousNames = JSON.parse(previousNames);
+    if (!previousNames) {
+        return {};
+    }
+    return previousNames;
+}
 
 const getScore = () => {
     let previousScores = localStorage.getItem('score');
@@ -9,36 +17,48 @@ const getScore = () => {
     return previousScores;
 }
 
-const storeScore = marks => {
+const storeScore = (marks, name) => {
+    let participantName = getName();
     let quizScore = getScore();
-    console.log(quizScore);
     if (quizScore['score']) {
         const scoreArray = quizScore['score'];
+        const nameArray = participantName['name'];
         
         if (scoreArray.length < 5) {
             for (let i = 0; i < scoreArray.length; i++) {
                 const element = scoreArray[i];
+                const element2 = nameArray[i];
                 if (element < marks) {
                     scoreArray[i] = marks;
+                    nameArray[i] = name;
+                    name = element2;
                     marks = element;
                 }
             }
             scoreArray.push(marks);
+            nameArray.push(name);
             quizScore['score'] = scoreArray;
+            participantName['name'] = nameArray;
         }
         else{
             for (let i = 0; i < 5; i++) {
                 const element = scoreArray[i];
+                const element2 = nameArray[i];
                 if (element < marks) {
                     scoreArray[i] = marks;
+                    nameArray[i] = name;
                     marks = element;
+                    name = element2;
                 }
             }
         }
     }
     else {
         quizScore['score'] = [marks];
+        participantName['name'] = [name];
     }
     quizScore = JSON.stringify(quizScore);
+    participantName = JSON.stringify(participantName);
     localStorage.setItem('score', quizScore);
+    localStorage.setItem('name', participantName);
 }
