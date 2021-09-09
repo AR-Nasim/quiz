@@ -14,19 +14,65 @@ header{
     display: block;
     
 }
-#start{
+.btn{
+    color: white;
+    background-color: #130f40;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+}
+.btn:hover{
+    color: white;
+    background-color: #30336b;
+}
+.button{
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #30336b;
+    padding: 15px;
+    border: none;
+    border-radius: 0 0 10px 10px;
+}
+.button:hover {
+    background-color: #242658;
+}
+.button:focus{
+    outline: none !important;
+}
+#begin{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    height: 200px;
+    min-width: 80%;
+}
+.label{
+    font-size: 24px;
+    color: #130f40;
+    font-weight: bold;
     display: block;
+    margin-bottom: 7px;
+}
+#input{
+    border: 1px solid #130f40;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+}
+#start{
     color: white;
     border: none;
-    width: 200px;
-    height: 80px;
+    width: 120px;
     background-color: #130f40;
     border-radius: 5px;
     font-size: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 main{
     display: none;
@@ -95,33 +141,7 @@ label{
     width: 85%;
     cursor: pointer;
 }
-.btn{
-    color: white;
-    background-color: #130f40;
-    border: none;
-    outline: none;
-    padding: 10px 20px;
-}
-.btn:hover{
-    color: white;
-    background-color: #30336b;
-}
-.button{
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #30336b;
-    padding: 15px;
-    border: none;
-    border-radius: 0 0 10px 10px;
-}
-.button:hover {
-    background-color: #242658;
-}
-.button:focus{
-    outline: none !important;
-}
+
 #start:hover{
     background-color: #30336b;
 }
